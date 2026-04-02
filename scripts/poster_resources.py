@@ -1,92 +1,109 @@
 import html
 
-# --- 1. 20 PROFESSIONAL PALETTES (GENOME) ---
+# --- 1. 20 PROFESSIONAL PALETTES (GENOME v4) ---
+# p: Primary (Headers, Accents)
+# s: Secondary (Gradients, Sub-headers)
+# board_bg: Main Poster Substrate (Large boards)
+# card_bg: UI Component Background (Inner cards)
+# t_h: Title/Header Text Color (High contrast)
+# t_b: Body/Content Text Color (Readability optimized)
+
 PALETTES = [
-    {"p": "#0D47A1", "s": "#1E88E5", "bg": "#E3F2FD", "t": "#012169"}, # 01
-    {"p": "#1B5E20", "s": "#388E3C", "bg": "#E8F5E9", "t": "#0D2E11"},
-    {"p": "#B71C1C", "s": "#D32F2F", "bg": "#FFEBEE", "t": "#440000"},
-    {"p": "#E65100", "s": "#F57C00", "bg": "#FFF3E0", "t": "#3E2723"},
-    {"p": "#4A148C", "s": "#7B1FA2", "bg": "#F3E5F5", "t": "#21004A"},
-    {"p": "#006064", "s": "#00838F", "bg": "#E0F7FA", "t": "#00241f"},
-    {"p": "#880E4F", "s": "#AD1457", "bg": "#FCE4EC", "t": "#4A0021"},
-    {"p": "#33691E", "s": "#558B2F", "bg": "#F1F8E9", "t": "#1B3000"},
-    {"p": "#01579B", "s": "#0288D1", "bg": "#E1F5FE", "t": "#00214a"},
-    {"p": "#BF360C", "s": "#D84315", "bg": "#FBE9E7", "t": "#441200"},
-    {"p": "#263238", "s": "#455A64", "bg": "#ECEFF1", "t": "#101010"},
-    {"p": "#1A237E", "s": "#303F9F", "bg": "#C5CAE9", "t": "#000033"},
-    {"p": "#004D40", "s": "#00695C", "bg": "#B2DFDB", "t": "#00241f"},
-    {"p": "#3E2723", "s": "#5D4037", "bg": "#EFEBE9", "t": "#210000"},
-    {"p": "#F57F17", "s": "#FBC02D", "bg": "#FFF9C4", "t": "#332200"},
-    {"p": "#212121", "s": "#424242", "bg": "#eeeeee", "t": "#000000"},
-    {"p": "#0D47A1", "s": "#2962FF", "bg": "#BBDEFB", "t": "#012169"},
-    {"p": "#2E7D32", "s": "#00C853", "bg": "#DCEDC8", "t": "#0D2E11"},
-    {"p": "#C62828", "s": "#FF1744", "bg": "#FFCCBC", "t": "#440000"},
-    {"p": "#311B92", "s": "#651FFF", "bg": "#D1C4E9", "t": "#1A237E"}
+    {"p": "#0D47A1", "s": "#1E88E5", "board_bg": "#F8FAFC", "card_bg": "#FFFFFF", "t_h": "#012169", "t_b": "#334155"}, # 01: Executive Blue
+    {"p": "#1B5E20", "s": "#388E3C", "board_bg": "#F1F8E9", "card_bg": "#FFFFFF", "t_h": "#0D2E11", "t_b": "#2D3748"}, # 02: Forest Research
+    {"p": "#B71C1C", "s": "#D32F2F", "board_bg": "#FFF5F5", "card_bg": "#FFFFFF", "t_h": "#440000", "t_b": "#4A5568"}, # 03: Academic Red
+    {"p": "#E65100", "s": "#F57C00", "board_bg": "#FFF8E1", "card_bg": "#FFFFFF", "t_h": "#3E2723", "t_b": "#4A3728"}, # 04: Energy Orange
+    {"p": "#4A148C", "s": "#7B1FA2", "board_bg": "#FAFAFF", "card_bg": "#FFFFFF", "t_h": "#21004A", "t_b": "#2D3748"}, # 05: Deep Purple
+    {"p": "#006064", "s": "#00838F", "board_bg": "#F0FDFA", "card_bg": "#FFFFFF", "t_h": "#00241F", "t_b": "#1A365D"}, # 06: Teal Med
+    {"p": "#880E4F", "s": "#AD1457", "board_bg": "#FFF1F2", "card_bg": "#FFFFFF", "t_h": "#4A0021", "t_b": "#4C1D95"}, # 07: Magenta Tech
+    {"p": "#33691E", "s": "#558B2F", "board_bg": "#F9FBE7", "card_bg": "#FFFFFF", "t_h": "#1B3000", "t_b": "#365314"}, # 08: Bio Olive
+    {"p": "#01579B", "s": "#0288D1", "board_bg": "#F0F9FF", "card_bg": "#FFFFFF", "t_h": "#00214A", "t_b": "#1E3A8A"}, # 09: Ocean Deep
+    {"p": "#BF360C", "s": "#D84315", "board_bg": "#FFF7ED", "card_bg": "#FFFFFF", "t_h": "#441200", "t_b": "#431407"}, # 10: Earth Terra
+    {"p": "#374151", "s": "#4B5563", "board_bg": "#F3F4F6", "card_bg": "#FFFFFF", "t_h": "#111827", "t_b": "#374151"}, # 11: Slate Modern
+    {"p": "#1E1B4B", "s": "#312E81", "board_bg": "#EEF2FF", "card_bg": "#FFFFFF", "t_h": "#1E1B4B", "t_b": "#312E81"}, # 12: Indigo Night
+    {"p": "#064E3B", "s": "#065F46", "board_bg": "#ECFDF5", "card_bg": "#FFFFFF", "t_h": "#064E3B", "t_b": "#065F46"}, # 13: Emerald
+    {"p": "#451A03", "s": "#78350F", "board_bg": "#FFFBEB", "card_bg": "#FFFFFF", "t_h": "#451A03", "t_b": "#78350F"}, # 14: Amber Gold
+    {"p": "#333333", "s": "#666666", "board_bg": "#FFFFFF", "card_bg": "#F9FAFB", "t_h": "#000000", "t_b": "#4B5563"}, # 15: Clean White
+    {"p": "#1E293B", "s": "#334155", "board_bg": "#F1F5F9", "card_bg": "#FFFFFF", "t_h": "#020617", "t_b": "#1E293B"}, # 16: Iron Grey
+    {"p": "#0F172A", "s": "#1E293B", "board_bg": "#FFFFFF", "card_bg": "#F8FAFC", "t_h": "#0F172A", "t_b": "#334155"}, # 17: Paper Ink
+    {"p": "#7C2D12", "s": "#9A3412", "board_bg": "#FFF7ED", "card_bg": "#FFFFFF", "t_h": "#7C2D12", "t_b": "#9A3412"}, # 18: Burnt Orange
+    {"p": "#4C1D95", "s": "#5B21B6", "board_bg": "#F5F3FF", "card_bg": "#FFFFFF", "t_h": "#4C1D95", "t_b": "#5B21B6"}, # 19: Violet Soft
+    {"p": "#000000", "s": "#222222", "board_bg": "#E5E7EB", "card_bg": "#FFFFFF", "t_h": "#000000", "t_b": "#1F2937"}, # 20: Industrial
 ]
 
-# --- 2. SAFE MULTI-LINE TEXT (Inkscape Ready) ---
+# --- 2. SAFE MULTI-LINE TEXT ---
 def render_safe_text(x, y, width, font_size, line_height, text, color="#333", align="left"):
-    # Clear escaping & manual wrap
-    chars_per_line = int(width / (font_size * 1.05))
-    raw_lines = [text[i:i + chars_per_line] for i in range(0, len(text), chars_per_line)]
+    lines_raw = text.split('\n')
+    chars_per_line = int(width / (font_size * 1.1))
+    wrapped_lines = []
+    for line in lines_raw:
+        if not line.strip():
+            wrapped_lines.append("")
+            continue
+        for i in range(0, len(line), chars_per_line):
+            wrapped_lines.append(line[i:i + chars_per_line])
     anchor = "start" if align=="left" else "middle"
     res = f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{font_size}" fill="{color}" text-anchor="{anchor}">'
-    for i, raw_line in enumerate(raw_lines[:30]):
-        safe_line = html.escape(raw_line)
+    for i, line_content in enumerate(wrapped_lines[:80]):
+        safe_line = html.escape(line_content)
         dy = font_size * line_height if i > 0 else 0
         res += f'<tspan x="{x}" dy="{dy}">{safe_line}</tspan>'
     res += '</text>'
     return res
 
-# --- 3. ALL 20 UNIQUE UI RENDERERS ---
-def render_styled_section(x, y, w, h, title, content, style_id, p_c, bg_c):
+# --- 3. UI RENDERERS (v5 with High-Visibility Large Type) ---
+def render_styled_section(x, y, w, h, title, content, style_id, p_c, card_bg, t_h, t_b):
     res = f'<g transform="translate({x}, {y})">'
     sid = (style_id - 1) % 20
     s_title = html.escape(title)
 
+    # Styles implementation with ENLARGED type
     if sid == 0: # Solid
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="{p_c}" stroke-width="0.8"/><rect width="{w}" height="24" fill="{p_c}"/><text x="10" y="16" font-size="12" fill="#fff" font-weight="bold">{s_title}</text>'
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="{p_c}" stroke-width="1"/><rect width="{w}" height="40" fill="{p_c}"/><text x="20" y="28" font-size="24" fill="#fff" font-weight="bold">{s_title}</text>'
     elif sid == 1: # Shadow Rounded
-        res += f'<rect width="{w}" height="{h}" fill="#fff" rx="15" stroke="#eee" filter="url(#shadow)"/><text x="12" y="24" font-size="12" fill="{p_c}" font-weight="bold">● {s_title}</text>'
-    elif sid == 2: # Thin Line
-        res += f'<line x1="0" y1="22" x2="{w}" y2="22" stroke="{p_c}" stroke-width="3"/><text x="0" y="16" font-size="14" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 3: # Side Accent
-        res += f'<rect width="8" height="{h}" fill="{p_c}"/><text x="18" y="20" font-size="13" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 4: # Shaded Inset
-        res += f'<rect width="{w}" height="{h}" fill="#fff" rx="10" stroke="#ddd"/><rect width="{w}" height="32" fill="{bg_c}" rx="10"/><rect y="20" width="{w}" height="12" fill="{bg_c}"/><text x="12" y="22" font-size="12" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 5: # Dashed Blueprint
-        res += f'<rect width="{w}" height="{h}" fill="none" stroke="{p_c}" stroke-dasharray="4,2"/><rect width="100" height="22" fill="{p_c}"/><text x="10" y="16" font-size="11" fill="#fff">{s_title}</text>'
-    elif sid == 6: # Offset Floating
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="#ddd" rx="5"/><rect x="15" y="-12" width="120" height="24" fill="{p_c}" rx="5"/><text x="25" y="4" font-size="11" fill="#fff" font-weight="bold">{s_title}</text>'
-    elif sid == 7: # Flow Node
-        res += f'<line x1="-12" y1="12" x2="-12" y2="{h}" stroke="{p_c}" stroke-width="2" stroke-dasharray="2,2"/><circle cx="-12" cy="12" r="6" fill="{p_c}"/><text x="10" y="18" font-size="14" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 8: # Banded Header
-        res += f'<rect width="{w}" height="6" fill="{p_c}"/><rect y="6" width="{w}" height="{h-6}" fill="{bg_c}" opacity="0.3"/><text x="0" y="25" font-size="14" fill="{p_c}" font-weight="bold">{s_title.upper()}</text>'
-    elif sid == 9: # Brackets
-        res += f'<path d="M20,0 L0,0 L0,20" fill="none" stroke="{p_c}" stroke-width="3"/><path d="M{w-20},{h} L{w},{h} L{w},{h-20}" fill="none" stroke="{p_c}" stroke-width="3"/><text x="12" y="24" font-size="14" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 10: # Journal Serif
-        res += f'<line x1="0" y1="0" x2="{w}" y2="0" stroke="#000" stroke-width="2"/><text x="0" y="22" font-family="serif" font-size="16" fill="#000" font-weight="bold">{s_title}</text>'
-    elif sid == 11: # Number Badge
-        res += f'<circle cx="20" cy="20" r="22" fill="{bg_c}" stroke="{p_c}"/><text x="20" y="28" text-anchor="middle" font-size="22" fill="{p_c}" font-weight="bold">★</text><text x="55" y="26" font-size="14" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 12: # Geometric Badge
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="#ddd"/><path d="M0,0 L40,0 L0,40 Z" fill="{p_c}"/><text x="45" y="20" font-size="12" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 13: # Glassmorphism
-        res += f'<rect width="{w}" height="{h}" fill="#fff" fill-opacity="0.8" stroke="#fff" stroke-width="1" rx="12" filter="url(#shadow)"/><text x="15" y="24" font-size="13" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 14: # Organic Soft
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="{p_c}" stroke-width="0.5" rx="30 5 30 5"/><text x="30" y="24" font-size="13" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 15: # Swiss Heavy
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="#000" stroke-width="4"/><rect width="{w}" height="32" fill="#000"/><text x="10" y="22" font-size="14" fill="#fff" font-weight="bold">{s_title.upper()}</text>'
-    elif sid == 16: # Dotted Background
-        res += f'<rect width="{w}" height="{h}" fill="url(#dotGrid)" stroke="#ddd"/><rect x="10" y="8" width="100" height="22" fill="#fff" stroke="{p_c}"/><text x="18" y="24" font-size="11" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 17: # Clean Title-only
-        res += f'<rect width="{w}" height="{h}" fill="none" stroke="#eee"/><text x="0" y="15" font-size="13" fill="{p_c}" font-weight="bold" text-decoration="underline">{s_title}</text>'
-    elif sid == 18: # Double Inset Border
-        res += f'<rect width="{w}" height="{h}" fill="none" stroke="{p_c}" stroke-width="4" opacity="0.1"/><rect x="6" y="6" width="{w-12}" height="{h-12}" fill="#fff" stroke="{p_c}" stroke-width="1"/><text x="16" y="28" font-size="13" fill="{p_c}" font-weight="bold">{s_title}</text>'
-    elif sid == 19: # Linear Gradient Head
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="#ddd" rx="4"/><rect width="{w}" height="35" fill="url(#gradHead)" rx="4"/><text x="12" y="24" font-size="13" fill="#fff" font-weight="bold">{s_title}</text>'
-    else: # Fallback Box
-        res += f'<rect width="{w}" height="{h}" fill="#fff" stroke="#ddd"/><text x="10" y="20" font-size="12" fill="{p_c}" font-weight="bold">{s_title}</text>'
-
-    res += render_safe_text(12, 50 if sid!=2 else 40, w-24, 10.5, 1.6, content)
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" rx="15" stroke="#eee" filter="url(#shadow)"/><text x="20" y="40" font-size="24" fill="{t_h}" font-weight="bold">● {s_title}</text>'
+    elif sid == 2: # Left Border Accent
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}"/><path d="M 0,0 V {h}" stroke="{p_c}" stroke-width="12"/><text x="25" y="32" font-size="26" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 3: # Minimalist Underline
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" opacity="0.3"/><text x="0" y="35" font-size="32" fill="{t_h}" font-weight="900" style="text-transform:uppercase">{s_title}</text><path d="M 0,45 H {w}" stroke="{p_c}" stroke-width="4"/>'
+    elif sid == 4: # Double Border
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="{p_c}" stroke-width="2"/><rect x="6" y="6" width="{w-12}" height="{h-12}" fill="none" stroke="{p_c}" stroke-width="0.8" opacity="0.4"/><text x="20" y="42" font-size="22" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 5: # Capsule Title
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" rx="8" stroke="#ddd"/><rect x="20" y="-18" width="180" height="36" rx="18" fill="{p_c}"/><text x="110" y="8" font-size="18" fill="{fff}" text-anchor="middle" font-weight="bold">{s_title}</text>'
+    elif sid == 6: # Dots Grid
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="{p_c}" stroke-dasharray="2,6"/><text x="20" y="45" font-size="26" fill="{t_h}" font-weight="bold"># {s_title}</text>'
+    elif sid == 7: # Gradient Top
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" rx="10" stroke="#ccc"/><rect width="{w}" height="50" fill="url(#gradHead)" rx="10"/><text x="20" y="35" font-size="24" fill="#fff" font-weight="bold">{s_title}</text>'
+    elif sid == 8: # Modern Glass
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" fill-opacity="0.8" rx="25" stroke="#fff" stroke-opacity="0.5"/><text x="30" y="45" font-size="28" fill="{t_h}" font-weight="800">{s_title}</text>'
+    elif sid == 9: # Journal Serif
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="#333" stroke-width="3"/><line x1="20" y1="55" x2="{w-20}" y2="55" stroke="#333" stroke-width="1.5"/><text x="20" y="40" font-family="serif" font-size="28" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 10: # Bracket Style
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}"/><path d="M 30,0 H 0 V {h} H 30" fill="none" stroke="{p_c}" stroke-width="5"/><path d="M {w-30},0 H {w} V {h} H {w-30}" fill="none" stroke="{p_c}" stroke-width="5"/><text x="{w/2}" y="40" font-size="26" fill="{t_h}" text-anchor="middle" font-weight="bold">{s_title}</text>'
+    elif sid == 11: # Tag Style
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" rx="5" stroke="#eee"/><path d="M 0,0 H 60 L 75,22.5 L 60,45 H 0 Z" fill="{p_c}"/><text x="30" y="30" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">{s_title[:4]}</text>'
+    elif sid == 12: # Geometric Corner
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="{p_c}" stroke-width="2"/><polygon points="0,0 60,0 0,60" fill="{p_c}"/><text x="70" y="45" font-size="26" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 13: # Clean Float
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" filter="url(#shadow)" rx="10"/><text x="0" y="-15" font-size="28" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 14: # Outline Bold
+        res += f'<rect x="4" y="4" width="{w}" height="{h}" fill="none" stroke="{p_c}" opacity="0.4"/><rect width="{w}" height="{h}" fill="{card_bg}" stroke="{p_c}" stroke-width="3"/><text x="20" y="45" font-size="32" fill="{t_h}" font-weight="900">{s_title}</text>'
+    elif sid == 15: # Circle Bullet
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}"/><circle cx="25" cy="30" r="15" fill="{p_c}"/><text x="55" y="40" font-size="26" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 16: # Top Notch
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="#ddd"/><path d="M 0,0 H {w/2}" stroke="{p_c}" stroke-width="15"/><text x="20" y="55" font-size="28" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    elif sid == 17: # Slanted Header
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="#eee"/><path d="M 0,0 H {w} V 60 L 0,30 Z" fill="{p_c}"/><text x="20" y="40" font-size="20" fill="#fff" font-weight="bold">{s_title}</text>'
+    elif sid == 18: # Cyber Line
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}"/><path d="M 0,45 H {w}" stroke="{p_c}" stroke-width="1"/><path d="M 0,52 H {w/2}" stroke="{p_c}" stroke-width="5"/><text x="0" y="32" font-size="32" fill="{t_h}" font-weight="bold" font-style="italic">{s_title}</text>'
+    elif sid == 19: # Leaf Style
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" rx="40 0 40 0" stroke="{p_c}" stroke-width="2"/><text x="{w/2}" y="45" font-size="26" fill="{t_h}" text-anchor="middle" font-weight="bold">◈ {s_title} ◈</text>'
+    else: # Default
+        res += f'<rect width="{w}" height="{h}" fill="{card_bg}" stroke="#ccc"/><text x="10" y="30" font-size="20" fill="{t_h}" font-weight="bold">{s_title}</text>'
+    
+    # ENLARGED Body Text: Default font_size = 15
+    if content:
+        res += render_safe_text(20, 70 if sid!=3 else 80, w-40, 15, 1.4, content, color=t_b)
+    
     res += '</g>'
     return res

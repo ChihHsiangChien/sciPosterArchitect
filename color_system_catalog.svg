@@ -1,124 +1,325 @@
-<svg width="850" height="2250" xmlns="http://www.w3.org/2000/svg">
-<rect width="850" height="2250" fill="#f4f6f8"/>
-<text x="425" y="45" font-family="sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">專業配色型錄 (含 HEX &amp; RGB)</text>
-<g transform="translate(40, 100)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#0D47A1" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#0D47A1</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(13, 71, 161)</text>
-<rect x="135" y="15" width="40" height="40" fill="#1E88E5" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#1E88E5</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(30, 136, 229)</text>
-<rect x="255" y="15" width="40" height="40" fill="#E3F2FD" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#E3F2FD</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(227, 242, 253)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold">方案 01 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 205)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#1B5E20" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#1B5E20</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(27, 94, 32)</text>
-<rect x="135" y="15" width="40" height="40" fill="#388E3C" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#388E3C</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(56, 142, 60)</text>
-<rect x="255" y="15" width="40" height="40" fill="#E8F5E9" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#E8F5E9</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(232, 245, 233)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#1B5E20" font-weight="bold">方案 02 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 310)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#B71C1C" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#B71C1C</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(183, 28, 28)</text>
-<rect x="135" y="15" width="40" height="40" fill="#D32F2F" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#D32F2F</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(211, 47, 47)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FFEBEE" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FFEBEE</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(255, 235, 238)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#B71C1C" font-weight="bold">方案 03 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 415)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#E65100" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#E65100</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(230, 81, 0)</text>
-<rect x="135" y="15" width="40" height="40" fill="#F57C00" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#F57C00</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(245, 124, 0)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FFF3E0" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FFF3E0</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(255, 243, 224)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#E65100" font-weight="bold">方案 04 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 520)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#4A148C" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#4A148C</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(74, 20, 140)</text>
-<rect x="135" y="15" width="40" height="40" fill="#7B1FA2" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#7B1FA2</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(123, 31, 162)</text>
-<rect x="255" y="15" width="40" height="40" fill="#F3E5F5" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#F3E5F5</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(243, 229, 245)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#4A148C" font-weight="bold">方案 05 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 625)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#006064" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#006064</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(0, 96, 100)</text>
-<rect x="135" y="15" width="40" height="40" fill="#00838F" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#00838F</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(0, 131, 143)</text>
-<rect x="255" y="15" width="40" height="40" fill="#E0F7FA" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#E0F7FA</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(224, 247, 250)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#006064" font-weight="bold">方案 06 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 730)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#880E4F" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#880E4F</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(136, 14, 79)</text>
-<rect x="135" y="15" width="40" height="40" fill="#AD1457" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#AD1457</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(173, 20, 87)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FCE4EC" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FCE4EC</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(252, 228, 236)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#880E4F" font-weight="bold">方案 07 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 835)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#33691E" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#33691E</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(51, 105, 30)</text>
-<rect x="135" y="15" width="40" height="40" fill="#558B2F" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#558B2F</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(85, 139, 47)</text>
-<rect x="255" y="15" width="40" height="40" fill="#F1F8E9" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#F1F8E9</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(241, 248, 233)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#33691E" font-weight="bold">方案 08 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 940)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#01579B" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#01579B</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(1, 87, 155)</text>
-<rect x="135" y="15" width="40" height="40" fill="#0288D1" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#0288D1</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(2, 136, 209)</text>
-<rect x="255" y="15" width="40" height="40" fill="#E1F5FE" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#E1F5FE</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(225, 245, 254)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#01579B" font-weight="bold">方案 09 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1045)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#BF360C" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#BF360C</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(191, 54, 12)</text>
-<rect x="135" y="15" width="40" height="40" fill="#D84315" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#D84315</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(216, 67, 21)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FBE9E7" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FBE9E7</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(251, 233, 231)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#BF360C" font-weight="bold">方案 10 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1150)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#263238" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#263238</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(38, 50, 56)</text>
-<rect x="135" y="15" width="40" height="40" fill="#455A64" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#455A64</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(69, 90, 100)</text>
-<rect x="255" y="15" width="40" height="40" fill="#ECEFF1" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#ECEFF1</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(236, 239, 241)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#263238" font-weight="bold">方案 11 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1255)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#1A237E" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#1A237E</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(26, 35, 126)</text>
-<rect x="135" y="15" width="40" height="40" fill="#303F9F" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#303F9F</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(48, 63, 159)</text>
-<rect x="255" y="15" width="40" height="40" fill="#C5CAE9" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#C5CAE9</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(197, 202, 233)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#1A237E" font-weight="bold">方案 12 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1360)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#004D40" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#004D40</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(0, 77, 64)</text>
-<rect x="135" y="15" width="40" height="40" fill="#00695C" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#00695C</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(0, 105, 92)</text>
-<rect x="255" y="15" width="40" height="40" fill="#B2DFDB" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#B2DFDB</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(178, 223, 219)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#004D40" font-weight="bold">方案 13 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1465)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#3E2723" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#3E2723</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(62, 39, 35)</text>
-<rect x="135" y="15" width="40" height="40" fill="#5D4037" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#5D4037</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(93, 64, 55)</text>
-<rect x="255" y="15" width="40" height="40" fill="#EFEBE9" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#EFEBE9</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(239, 235, 233)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#3E2723" font-weight="bold">方案 14 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1570)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#F57F17" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#F57F17</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(245, 127, 23)</text>
-<rect x="135" y="15" width="40" height="40" fill="#FBC02D" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#FBC02D</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(251, 192, 45)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FFF9C4" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FFF9C4</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(255, 249, 196)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#F57F17" font-weight="bold">方案 15 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1675)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#212121" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#212121</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(33, 33, 33)</text>
-<rect x="135" y="15" width="40" height="40" fill="#424242" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#424242</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(66, 66, 66)</text>
-<rect x="255" y="15" width="40" height="40" fill="#eeeeee" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#eeeeee</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(238, 238, 238)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#212121" font-weight="bold">方案 16 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1780)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#0D47A1" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#0D47A1</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(13, 71, 161)</text>
-<rect x="135" y="15" width="40" height="40" fill="#2962FF" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#2962FF</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(41, 98, 255)</text>
-<rect x="255" y="15" width="40" height="40" fill="#BBDEFB" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#BBDEFB</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(187, 222, 251)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#0D47A1" font-weight="bold">方案 17 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1885)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#2E7D32" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#2E7D32</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(46, 125, 50)</text>
-<rect x="135" y="15" width="40" height="40" fill="#00C853" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#00C853</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(0, 200, 83)</text>
-<rect x="255" y="15" width="40" height="40" fill="#DCEDC8" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#DCEDC8</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(220, 237, 200)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#2E7D32" font-weight="bold">方案 18 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 1990)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#C62828" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#C62828</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(198, 40, 40)</text>
-<rect x="135" y="15" width="40" height="40" fill="#FF1744" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#FF1744</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(255, 23, 68)</text>
-<rect x="255" y="15" width="40" height="40" fill="#FFCCBC" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#FFCCBC</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(255, 204, 188)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#C62828" font-weight="bold">方案 19 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-<g transform="translate(40, 2095)"><rect width="770" height="90" fill="#fff" rx="12" stroke="#ddd" stroke-width="0.5"/>
-<rect x="15" y="15" width="40" height="40" fill="#311B92" rx="5"/><text x="15" y="68" font-family="monospace" font-size="8" fill="#666" font-weight="bold">#311B92</text><text x="15" y="80" font-family="monospace" font-size="7" fill="#888">rgb(49, 27, 146)</text>
-<rect x="135" y="15" width="40" height="40" fill="#651FFF" rx="5"/><text x="135" y="68" font-family="monospace" font-size="8" fill="#666">#651FFF</text><text x="135" y="80" font-family="monospace" font-size="7" fill="#888">rgb(101, 31, 255)</text>
-<rect x="255" y="15" width="40" height="40" fill="#D1C4E9" rx="5" stroke="#eee"/><text x="255" y="68" font-family="monospace" font-size="8" fill="#666">#D1C4E9</text><text x="255" y="80" font-family="monospace" font-size="7" fill="#888">rgb(209, 196, 233)</text>
-<text x="400" y="32" font-family="sans-serif" font-size="14" fill="#311B92" font-weight="bold">方案 20 | 標題文字樣式</text>
-<text x="400" y="55" font-family="sans-serif" font-size="10" fill="#666">這是可讀性測試文字 (Scheme Preview Content)</text></g>
-</svg>
+<svg width="850" height="2350" xmlns="http://www.w3.org/2000/svg">
+<rect width="850" height="2350" fill="#f8fafc"/>
+<text x="425" y="45" font-family="sans-serif" font-size="28" text-anchor="middle" font-weight="bold" fill="#0f172a">專業設計配色型錄 </text>
+<text x="425" y="70" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#64748b">Hierarchy: Board | Card | Title Text | Body Text</text>
+<g transform="translate(40, 120)">
+<rect width="770" height="100" fill="#F8FAFC" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#0D47A1" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#0D47A1" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#0D47A1</text>
+<circle cx="115" cy="35" r="18" fill="#1E88E5" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E88E5</text>
+<circle cx="185" cy="35" r="18" fill="#012169" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#012169</text>
+<circle cx="245" cy="35" r="18" fill="#334155" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#334155</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#012169" font-weight="bold">方案 01標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#334155">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#012169" font-weight="bold">配對組合 01</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F8FAFC | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 230)">
+<rect width="770" height="100" fill="#F1F8E9" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#1B5E20" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#1B5E20" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1B5E20</text>
+<circle cx="115" cy="35" r="18" fill="#388E3C" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#388E3C</text>
+<circle cx="185" cy="35" r="18" fill="#0D2E11" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#0D2E11</text>
+<circle cx="245" cy="35" r="18" fill="#2D3748" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#2D3748</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#0D2E11" font-weight="bold">方案 02標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#2D3748">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#0D2E11" font-weight="bold">配對組合 02</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F1F8E9 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 340)">
+<rect width="770" height="100" fill="#FFF5F5" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#B71C1C" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#B71C1C" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#B71C1C</text>
+<circle cx="115" cy="35" r="18" fill="#D32F2F" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#D32F2F</text>
+<circle cx="185" cy="35" r="18" fill="#440000" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#440000</text>
+<circle cx="245" cy="35" r="18" fill="#4A5568" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4A5568</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#440000" font-weight="bold">方案 03標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#4A5568">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#440000" font-weight="bold">配對組合 03</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFF5F5 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 450)">
+<rect width="770" height="100" fill="#FFF8E1" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#E65100" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#E65100" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#E65100</text>
+<circle cx="115" cy="35" r="18" fill="#F57C00" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#F57C00</text>
+<circle cx="185" cy="35" r="18" fill="#3E2723" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#3E2723</text>
+<circle cx="245" cy="35" r="18" fill="#4A3728" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4A3728</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#3E2723" font-weight="bold">方案 04標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#4A3728">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#3E2723" font-weight="bold">配對組合 04</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFF8E1 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 560)">
+<rect width="770" height="100" fill="#FAFAFF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#4A148C" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#4A148C" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4A148C</text>
+<circle cx="115" cy="35" r="18" fill="#7B1FA2" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#7B1FA2</text>
+<circle cx="185" cy="35" r="18" fill="#21004A" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#21004A</text>
+<circle cx="245" cy="35" r="18" fill="#2D3748" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#2D3748</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#21004A" font-weight="bold">方案 05標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#2D3748">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#21004A" font-weight="bold">配對組合 05</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FAFAFF | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 670)">
+<rect width="770" height="100" fill="#F0FDFA" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#006064" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#006064" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#006064</text>
+<circle cx="115" cy="35" r="18" fill="#00838F" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#00838F</text>
+<circle cx="185" cy="35" r="18" fill="#00241F" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#00241F</text>
+<circle cx="245" cy="35" r="18" fill="#1A365D" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1A365D</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#00241F" font-weight="bold">方案 06標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#1A365D">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#00241F" font-weight="bold">配對組合 06</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F0FDFA | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 780)">
+<rect width="770" height="100" fill="#FFF1F2" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#880E4F" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#880E4F" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#880E4F</text>
+<circle cx="115" cy="35" r="18" fill="#AD1457" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#AD1457</text>
+<circle cx="185" cy="35" r="18" fill="#4A0021" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4A0021</text>
+<circle cx="245" cy="35" r="18" fill="#4C1D95" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4C1D95</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#4A0021" font-weight="bold">方案 07標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#4C1D95">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#4A0021" font-weight="bold">配對組合 07</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFF1F2 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 890)">
+<rect width="770" height="100" fill="#F9FBE7" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#33691E" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#33691E" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#33691E</text>
+<circle cx="115" cy="35" r="18" fill="#558B2F" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#558B2F</text>
+<circle cx="185" cy="35" r="18" fill="#1B3000" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1B3000</text>
+<circle cx="245" cy="35" r="18" fill="#365314" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#365314</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#1B3000" font-weight="bold">方案 08標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#365314">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#1B3000" font-weight="bold">配對組合 08</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F9FBE7 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1000)">
+<rect width="770" height="100" fill="#F0F9FF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#01579B" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#01579B" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#01579B</text>
+<circle cx="115" cy="35" r="18" fill="#0288D1" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#0288D1</text>
+<circle cx="185" cy="35" r="18" fill="#00214A" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#00214A</text>
+<circle cx="245" cy="35" r="18" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E3A8A</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#00214A" font-weight="bold">方案 09標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#1E3A8A">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#00214A" font-weight="bold">配對組合 09</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F0F9FF | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1110)">
+<rect width="770" height="100" fill="#FFF7ED" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#BF360C" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#BF360C" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#BF360C</text>
+<circle cx="115" cy="35" r="18" fill="#D84315" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#D84315</text>
+<circle cx="185" cy="35" r="18" fill="#441200" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#441200</text>
+<circle cx="245" cy="35" r="18" fill="#431407" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#431407</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#441200" font-weight="bold">方案 10標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#431407">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#441200" font-weight="bold">配對組合 10</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFF7ED | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1220)">
+<rect width="770" height="100" fill="#F3F4F6" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#374151" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#374151" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#374151</text>
+<circle cx="115" cy="35" r="18" fill="#4B5563" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4B5563</text>
+<circle cx="185" cy="35" r="18" fill="#111827" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#111827</text>
+<circle cx="245" cy="35" r="18" fill="#374151" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#374151</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#111827" font-weight="bold">方案 11標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#374151">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#111827" font-weight="bold">配對組合 11</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F3F4F6 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1330)">
+<rect width="770" height="100" fill="#EEF2FF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#1E1B4B" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#1E1B4B" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E1B4B</text>
+<circle cx="115" cy="35" r="18" fill="#312E81" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#312E81</text>
+<circle cx="185" cy="35" r="18" fill="#1E1B4B" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E1B4B</text>
+<circle cx="245" cy="35" r="18" fill="#312E81" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#312E81</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#1E1B4B" font-weight="bold">方案 12標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#312E81">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#1E1B4B" font-weight="bold">配對組合 12</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#EEF2FF | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1440)">
+<rect width="770" height="100" fill="#ECFDF5" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#064E3B" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#064E3B" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#064E3B</text>
+<circle cx="115" cy="35" r="18" fill="#065F46" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#065F46</text>
+<circle cx="185" cy="35" r="18" fill="#064E3B" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#064E3B</text>
+<circle cx="245" cy="35" r="18" fill="#065F46" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#065F46</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#064E3B" font-weight="bold">方案 13標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#065F46">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#064E3B" font-weight="bold">配對組合 13</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#ECFDF5 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1550)">
+<rect width="770" height="100" fill="#FFFBEB" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#451A03" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#451A03" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#451A03</text>
+<circle cx="115" cy="35" r="18" fill="#78350F" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#78350F</text>
+<circle cx="185" cy="35" r="18" fill="#451A03" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#451A03</text>
+<circle cx="245" cy="35" r="18" fill="#78350F" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#78350F</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#451A03" font-weight="bold">方案 14標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#78350F">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#451A03" font-weight="bold">配對組合 14</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFFBEB | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1660)">
+<rect width="770" height="100" fill="#FFFFFF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#F9FAFB" rx="8" stroke="#333333" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#333333" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#333333</text>
+<circle cx="115" cy="35" r="18" fill="#666666" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#666666</text>
+<circle cx="185" cy="35" r="18" fill="#000000" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#000000</text>
+<circle cx="245" cy="35" r="18" fill="#4B5563" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4B5563</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#000000" font-weight="bold">方案 15標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#4B5563">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#000000" font-weight="bold">配對組合 15</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFFFFF | C:#F9FAFB</text>
+</g>
+<g transform="translate(40, 1770)">
+<rect width="770" height="100" fill="#F1F5F9" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#1E293B" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#1E293B" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E293B</text>
+<circle cx="115" cy="35" r="18" fill="#334155" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#334155</text>
+<circle cx="185" cy="35" r="18" fill="#020617" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#020617</text>
+<circle cx="245" cy="35" r="18" fill="#1E293B" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E293B</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#020617" font-weight="bold">方案 16標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#1E293B">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#020617" font-weight="bold">配對組合 16</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F1F5F9 | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 1880)">
+<rect width="770" height="100" fill="#FFFFFF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#F8FAFC" rx="8" stroke="#0F172A" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#0F172A" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#0F172A</text>
+<circle cx="115" cy="35" r="18" fill="#1E293B" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1E293B</text>
+<circle cx="185" cy="35" r="18" fill="#0F172A" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#0F172A</text>
+<circle cx="245" cy="35" r="18" fill="#334155" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#334155</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#0F172A" font-weight="bold">方案 17標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#334155">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#0F172A" font-weight="bold">配對組合 17</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFFFFF | C:#F8FAFC</text>
+</g>
+<g transform="translate(40, 1990)">
+<rect width="770" height="100" fill="#FFF7ED" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#7C2D12" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#7C2D12" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#7C2D12</text>
+<circle cx="115" cy="35" r="18" fill="#9A3412" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#9A3412</text>
+<circle cx="185" cy="35" r="18" fill="#7C2D12" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#7C2D12</text>
+<circle cx="245" cy="35" r="18" fill="#9A3412" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#9A3412</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#7C2D12" font-weight="bold">方案 18標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#9A3412">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#7C2D12" font-weight="bold">配對組合 18</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#FFF7ED | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 2100)">
+<rect width="770" height="100" fill="#F5F3FF" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#4C1D95" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#4C1D95" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4C1D95</text>
+<circle cx="115" cy="35" r="18" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#5B21B6</text>
+<circle cx="185" cy="35" r="18" fill="#4C1D95" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#4C1D95</text>
+<circle cx="245" cy="35" r="18" fill="#5B21B6" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#5B21B6</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#4C1D95" font-weight="bold">方案 19標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#5B21B6">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#4C1D95" font-weight="bold">配對組合 19</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#F5F3FF | C:#FFFFFF</text>
+</g>
+<g transform="translate(40, 2210)">
+<rect width="770" height="100" fill="#E5E7EB" rx="12" stroke="#e2e8f0" stroke-width="0.5"/>
+<rect x="280" y="15" width="260" height="70" fill="#FFFFFF" rx="8" stroke="#000000" stroke-width="0.5" filter="url(#shadow)"/>
+<circle cx="45" cy="35" r="18" fill="#000000" stroke="#fff" stroke-width="2"/>
+<text x="45" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#000000</text>
+<circle cx="115" cy="35" r="18" fill="#222222" stroke="#fff" stroke-width="2"/>
+<text x="115" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#222222</text>
+<circle cx="185" cy="35" r="18" fill="#000000" stroke="#fff" stroke-width="2"/>
+<text x="185" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#000000</text>
+<circle cx="245" cy="35" r="18" fill="#1F2937" stroke="#fff" stroke-width="2"/>
+<text x="245" y="70" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748b">#1F2937</text>
+<text x="300" y="40" font-family="sans-serif" font-size="14" fill="#000000" font-weight="bold">方案 20標題樣式</text>
+<text x="300" y="62" font-family="sans-serif" font-size="10" fill="#1F2937">這是對比測試內文 (Matched Body Text)</text>
+<text x="560" y="42" font-family="sans-serif" font-size="12" fill="#000000" font-weight="bold">配對組合 20</text>
+<text x="560" y="62" font-family="monospace" font-size="8" fill="#94a3b8">B:#E5E7EB | C:#FFFFFF</text>
+</g>
+<defs><filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/></filter></defs></svg>

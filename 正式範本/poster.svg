@@ -1,0 +1,29 @@
+<svg width="2070mm" height="1410mm" viewBox="0 -210 2070 1410" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+  <!-- 
+    Taiwan Science Fair Standard Template (Simplified)
+    Layout Hierarchy:
+    - Top Board (Middle Header): 750x200mm
+    - Left Board: 650x1200mm
+    - Middle Board: 750x1200mm
+    - Right Board: 650x1200mm
+  -->
+  
+  <g id="base_template_boards" fill="none" stroke="#DDDDDD" stroke-width="1">
+    <!-- Page 1: Left (650x1200) -->
+    <rect id="board_left_frame" x="0" y="0" width="650" height="1200" />
+    
+    <!-- Page 2: Middle (750x1200) -->
+    <rect id="board_middle_frame" x="660" y="0" width="750" height="1200" />
+    
+    <!-- Page 4: Top Header (750x200) -->
+    <rect id="board_top_frame" x="660" y="-210" width="750" height="200" />
+    
+    <!-- Page 3: Right (650x1200) -->
+    <rect id="board_right_frame" x="1420" y="0" width="650" height="1200" />
+  </g>
+
+  <!-- Content Injection Marker Layer -->
+  <g inkscape:groupmode="layer" inkscape:label="Content Layer" id="layer_content">
+    <!-- Generated content will be injected here -->
+  </g>
+</svg>

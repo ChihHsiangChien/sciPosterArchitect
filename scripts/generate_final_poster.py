@@ -28,11 +28,12 @@ def main():
 
     # 讀取全域配色
     pal = res.PALETTES[CONFIG["COLOR_PALETTE_ID"] - 1]
-    p_c, bg_c = pal["p"], pal["bg"]
+    p_c, board_bg, card_bg = pal["p"], pal["board_bg"], pal["card_bg"]
+    t_h, t_b = pal["t_h"], pal["t_b"]
     
     # 生成 SVG 畫布
     svg = ['<svg width="595" height="842" viewBox="0 0 595 842" xmlns="http://www.w3.org/2000/svg">']
-    svg.append('<rect width="595" height="842" fill="#fafafa"/>')
+    svg.append(f'<rect width="595" height="842" fill="{board_bg}"/>') # 套用配套底板色
     
     # --- 頁首製作 ---
     svg.append(f'<rect width="595" height="110" fill="{p_c}"/>')
@@ -41,10 +42,10 @@ def main():
     
     # --- 模組化佈局調用 ---
     sid = CONFIG["UI_STYLE_ID"]
-    svg.append(res.render_styled_section(35, 140, 175, 130, "摘要", content["abstract"], sid, p_c, bg_c))
-    svg.append(res.render_styled_section(35, 290, 175, 310, "研究動機", content["motivation"], sid, p_c, bg_c))
-    svg.append(res.render_styled_section(230, 140, 335, 250, "研究流程與方法", content["purpose"], sid, p_c, bg_c))
-    svg.append(res.render_styled_section(230, 420, 335, 380, "結果分析報告", content["result"], sid, p_c, bg_c))
+    svg.append(res.render_styled_section(35, 140, 175, 130, "摘要", content["abstract"], sid, p_c, card_bg, t_h, t_b))
+    svg.append(res.render_styled_section(35, 290, 175, 310, "研究動機", content["motivation"], sid, p_c, card_bg, t_h, t_b))
+    svg.append(res.render_styled_section(230, 140, 335, 250, "研究流程與方法", content["purpose"], sid, p_c, card_bg, t_h, t_b))
+    svg.append(res.render_styled_section(230, 420, 335, 380, "結果分析報告", content["result"], sid, p_c, card_bg, t_h, t_b))
     
     # --- 腳註與引用 ---
     footer_y = 810
