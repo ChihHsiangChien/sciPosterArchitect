@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科展海報架構師 - 組件建構器</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-hover: #334155;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --radius-lg: 16px;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Controls */
+        .sidebar {
+            width: 420px;
+            background-color: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-header {
+            padding: 24px 24px 16px 24px;
+            background-color: var(--surface);
+            z-index: 1;
+        }
+
+        .sidebar-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 14px 0;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .sidebar-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-header p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .control-group {
+            padding: 24px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .control-group h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        /* Form elements */
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            transition: all 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        /* Two columns layout for inputs */
+        .row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .col input {
+            margin-bottom: 0;
+        }
+
+        /* Color Palette Grid */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .palette-btn {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            position: relative;
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .palette-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .palette-btn.active {
+            border-color: var(--text-main);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .palette-label-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .palette-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .palette-toggle-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .palette-toggle-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        /* Palette Details */
+        .palette-details {
+            margin-top: 16px;
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 12px;
+        }
+
+        .color-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .color-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .color-info-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .color-values {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .color-copy {
+            cursor: pointer;
+            font-family: 'Consolas', monospace;
+            font-size: 11px;
+            padding: 2px 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            transition: all 0.2s;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+
+        .color-copy:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Style Components Grid */
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+            max-height: 480px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .style-grid::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .style-grid::-webkit-scrollbar-thumb {
+            background: var(--surface-hover);
+            border-radius: 2px;
+        }
+
+        .style-btn {
+            background: var(--bg);
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .style-btn:hover {
+            border-color: var(--primary-hover);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .style-btn.active {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .style-btn svg {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .style-btn-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .style-btn.active .style-btn-label {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Actions */
+        .actions-panel {
+            padding: 24px;
+            background: var(--surface);
+            position: sticky;
+            bottom: 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Preview Area */
+        .preview-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #f1f5f9;
+            /* Default board color */
+            transition: background-color 0.4s ease;
+            overflow: hidden;
+            background-image:
+                radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .preview-header {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 10;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .zoom-controls {
+            display: flex;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #334155;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.2s;
+        }
+
+        .zoom-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .zoom-level {
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .canvas-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+        }
+
+        .canvas-container:active {
+            cursor: grabbing;
+        }
+
+        .canvas {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 2070px;
+            height: 1440px;
+            margin-left: -1035px;
+            margin-top: -720px;
+            background: transparent;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform-origin: center center;
+            user-select: none;
+            /* No transition so panning is instantaneous */
+        }
+
+        /* Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            background: transparent;
+            margin-top: 10px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            margin-top: -6px;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>科展海報設計</h1>
+            <p>顏色與組件設計參考工具</p>
+        </div>
+
+        <div class="sidebar-tabs">
+            <button class="tab-btn active" id="btn-tab-color" onclick="switchTab('color')">1. 色彩系統</button>
+            <button class="tab-btn" id="btn-tab-border" onclick="switchTab('border')">2. 區塊底板</button>
+            <button class="tab-btn" id="btn-tab-header" onclick="switchTab('header')">3. 標題裝飾</button>
+            <button class="tab-btn" id="btn-tab-content" onclick="switchTab('content')">4. 內容設定</button>
+        </div>
+
+        <div class="sidebar-content">
+            <div class="control-group tab-pane active" id="tab-color">
+                <h2>色彩系統</h2>
+                <div class="palette-grid" id="paletteGrid">
+                    <!-- Generated via JS -->
+                </div>
+                <div class="palette-label-container">
+                    <div class="palette-label" id="paletteLabel">商務藍 (Executive Blue)</div>
+                    <button class="palette-toggle-btn" id="paletteToggleBtn" onclick="togglePaletteDetails()">顯示色碼詳情
+                        ▼</button>
+                </div>
+                <div id="paletteDetails" class="palette-details" style="display: none;">
+                    <!-- Generated via JS -->
+                </div>
+            </div>
+
+            <div class="control-group tab-pane" id="tab-border">
+                <h2>外框與卡片底板設計</h2>
+                <label>選擇內文區塊的底板層與邊緣外框特徵</label>
+                <div class="style-grid" id="borderGrid">
+                    <!-- Generated via JS -->
+                </div>
+            </div>
+
+            <div class="control-group tab-pane" id="tab-header">
+                <h2>標題裝飾設計</h2>
+                <label>選擇套用到小節標題的浮水印與幾何形狀組合</label>
+                <div class="style-grid" id="headerGrid">
+                    <!-- Generated via JS -->
+                </div>
+            </div>
+
+            <div class="control-group tab-pane" id="tab-content">
+                <h2>內容設定</h2>
+                <label for="compPosterTitle">海報標題</label>
+                <input type="text" id="compPosterTitle" value="自動化廢棄物分類系統">
+
+                <label for="compContent">摘要</label>
+                <textarea id="compContent">本研究開發高精度辨識模組，傳統體系誤判高、效率低。我們於嵌入式平台實現微秒級決策。經 5 萬組樣本驗證，誤判率降至 2.4% 以下。</textarea>
+
+                <label for="compMotivation">研究動機</label>
+                <textarea id="compMotivation">廢棄物管理為永續發展之關鍵，現今技術處理形變金屬與素材仍有瓶頸。將 AI 部署於端點，配合物理補償，能大幅提升效率。</textarea>
+
+                <label for="compPurpose">研究目的與方法</label>
+                <textarea id="compPurpose">1. 構建低功耗分辨模型。
+2. 研發動態感知爪。
+3. 量化運行穩定性。
+目標達成 60 FPS 以上處理效率。</textarea>
+
+                <label for="compResult">數據結果</label>
+                <textarea id="compResult">抓取成功率 94.8%，處理通量提升 45%，數據顯示座標誤差精確收斂於 ±0.02 範圍。顯著性檢定 (p &lt; 0.001)。</textarea>
+            </div>
+        </div>
+
+        <div class="actions-panel">
+            <button class="btn btn-primary" onclick="downloadSVG()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                下載完整 SVG (Download)
+            </button>
+        </div>
+    </div>
+
+    <div class="preview-area" id="previewArea">
+        <div class="preview-header">
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="adjustZoom(-0.1)">-</button>
+                <div class="zoom-level" id="zoomLevel">100%</div>
+                <button class="zoom-btn" onclick="adjustZoom(0.1)">+</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <div class="canvas" id="canvas">
+                <!-- SVG injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Definitions based on poster_resources.py
+        const PALETTES = [
+            { id: 1, name: "商務藍 (Executive Blue)", p: "#0D47A1", s: "#1E88E5", board_bg: "#F8FAFC", card_bg: "#FFFFFF", t_h: "#012169", t_b: "#334155" },
+            { id: 2, name: "森林綠 (Forest Research)", p: "#1B5E20", s: "#388E3C", board_bg: "#F1F8E9", card_bg: "#FFFFFF", t_h: "#0D2E11", t_b: "#2D3748" },
+            { id: 3, name: "學術紅 (Academic Red)", p: "#B71C1C", s: "#D32F2F", board_bg: "#FFF5F5", card_bg: "#FFFFFF", t_h: "#440000", t_b: "#4A5568" },
+            { id: 4, name: "活力橘 (Energy Orange)", p: "#E65100", s: "#F57C00", board_bg: "#FFF8E1", card_bg: "#FFFFFF", t_h: "#3E2723", t_b: "#4A3728" },
+            { id: 5, name: "深邃紫 (Deep Purple)", p: "#4A148C", s: "#7B1FA2", board_bg: "#FAFAFF", card_bg: "#FFFFFF", t_h: "#21004A", t_b: "#2D3748" },
+            { id: 6, name: "醫療青 (Teal Med)", p: "#006064", s: "#00838F", board_bg: "#F0FDFA", card_bg: "#FFFFFF", t_h: "#00241F", t_b: "#1A365D" },
+            { id: 7, name: "科技桃 (Magenta Tech)", p: "#880E4F", s: "#AD1457", board_bg: "#FFF1F2", card_bg: "#FFFFFF", t_h: "#4A0021", t_b: "#4C1D95" },
+            { id: 8, name: "生物橄欖 (Bio Olive)", p: "#33691E", s: "#558B2F", board_bg: "#F9FBE7", card_bg: "#FFFFFF", t_h: "#1B3000", t_b: "#365314" },
+            { id: 9, name: "深海藍 (Ocean Deep)", p: "#01579B", s: "#0288D1", board_bg: "#F0F9FF", card_bg: "#FFFFFF", t_h: "#00214A", t_b: "#1E3A8A" },
+            { id: 10, name: "大地棕 (Earth Terra)", p: "#BF360C", s: "#D84315", board_bg: "#FFF7ED", card_bg: "#FFFFFF", t_h: "#441200", t_b: "#431407" },
+            { id: 11, name: "現代板岩 (Slate Modern)", p: "#374151", s: "#4B5563", board_bg: "#F3F4F6", card_bg: "#FFFFFF", t_h: "#111827", t_b: "#374151" },
+            { id: 12, name: "靛青夜 (Indigo Night)", p: "#1E1B4B", s: "#312E81", board_bg: "#EEF2FF", card_bg: "#FFFFFF", t_h: "#1E1B4B", t_b: "#312E81" },
+            { id: 13, name: "翡翠綠 (Emerald)", p: "#064E3B", s: "#065F46", board_bg: "#ECFDF5", card_bg: "#FFFFFF", t_h: "#064E3B", t_b: "#065F46" },
+            { id: 14, name: "琥珀金 (Amber Gold)", p: "#451A03", s: "#78350F", board_bg: "#FFFBEB", card_bg: "#FFFFFF", t_h: "#451A03", t_b: "#78350F" },
+            { id: 15, name: "簡約白 (Clean White)", p: "#333333", s: "#666666", board_bg: "#FFFFFF", card_bg: "#F9FAFB", t_h: "#000000", t_b: "#4B5563" },
+            { id: 16, name: "鋼鐵灰 (Iron Grey)", p: "#1E293B", s: "#334155", board_bg: "#F1F5F9", card_bg: "#FFFFFF", t_h: "#020617", t_b: "#1E293B" },
+            { id: 17, name: "墨滴黑 (Paper Ink)", p: "#0F172A", s: "#1E293B", board_bg: "#FFFFFF", card_bg: "#F8FAFC", t_h: "#0F172A", t_b: "#334155" },
+            { id: 18, name: "煉瓦橘 (Burnt Orange)", p: "#7C2D12", s: "#9A3412", board_bg: "#FFF7ED", card_bg: "#FFFFFF", t_h: "#7C2D12", t_b: "#9A3412" },
+            { id: 19, name: "柔和紫 (Violet Soft)", p: "#4C1D95", s: "#5B21B6", board_bg: "#F5F3FF", card_bg: "#FFFFFF", t_h: "#4C1D95", t_b: "#5B21B6" },
+            { id: 20, name: "工業黑 (Industrial)", p: "#000000", s: "#222222", board_bg: "#E5E7EB", card_bg: "#FFFFFF", t_h: "#000000", t_b: "#1F2937" }
+        ];
+
+        const BORDERS = [
+            "B01: 基礎方框 (Basic Outline)",
+            "B02: 乾淨白板 (Clean White)",
+            "B03: 圓角浮凸 (Rounded Shadow)",
+            "B04: 內嵌雙線 (Inner Frame)",
+            "B05: 科技切邊 (Cyber Bevel)",
+            "B06: 虛線筆記 (Dashed Wireframe)",
+            "B07: 鑽石切邊 (Diamond Edges)",
+            "B08: 透明磨砂 (Translucent)"
+        ];
+
+        const HEADERS = [
+            "H01: 簡約粗體 (Plain Text)",
+            "H02: 全幅色塊 (Full Block)",
+            "H03: 圓角藥丸 (Pill Ribbon)",
+            "H04: 書籤緞帶 (Bookmark Ribbon)",
+            "H05: 左側粗線 (Left Accent Bar)",
+            "H06: 雙向中置 (Symmetric Center)",
+            "H07: 對稱托架 (Corner Brackets)",
+            "H08: 文件標籤 (Folder Tab)",
+            "H09: 斜體底線 (Italic Highlight)",
+            "H10: 符號強調 (Symbol Prefix)"
+        ];
+
+        // State
+        let currentPaletteId = 1;
+        let currentBorderId = 1;
+        let currentHeaderId = 1;
+        let currentZoom = 0.35;
+        let panX = 0;
+        let panY = 0;
+        let isPanning = false;
+        let startClientX = 0;
+        let startClientY = 0;
+
+        function hexToRgb(hex) {
+            let r = parseInt(hex.slice(1, 3), 16),
+                g = parseInt(hex.slice(3, 5), 16),
+                b = parseInt(hex.slice(5, 7), 16);
+            return { r, g, b };
+        }
+
+        function rgbToHsv(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            let max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, v = max;
+            let d = max - min;
+            s = max === 0 ? 0 : d / max;
+            if (max === min) {
+                h = 0;
+            } else {
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+            return { h: Math.round(h * 360), s: Math.round(s * 100), v: Math.round(v * 100) };
+        }
+
+        function getColorStrings(hex) {
+            const rgb = hexToRgb(hex);
+            const hsv = rgbToHsv(rgb.r, rgb.g, rgb.b);
+            return {
+                hex: hex.toUpperCase(),
+                rgb: `RGB: ${rgb.r}, ${rgb.g}, ${rgb.b}`,
+                hsv: `HSV: ${hsv.h}°, ${hsv.s}%, ${hsv.v}%`
+            };
+        }
+
+        function updatePaletteDetails(pal) {
+            const container = document.getElementById('paletteDetails');
+            const colors = [
+                { key: 'p', label: '主色調 (Primary)' },
+                { key: 's', label: '次色調 (Secondary)' },
+                { key: 'board_bg', label: '海報底板 (Board)' },
+                { key: 'card_bg', label: '層次底色 (Card)' }
+            ];
+
+            let html = '';
+            colors.forEach(item => {
+                const hex = pal[item.key];
+                const vals = getColorStrings(hex);
+                html += `
+                    <div class="color-row">
+                        <div class="color-info-left">
+                            <div class="color-swatch" style="background-color: ${hex}"></div>
+                            <div class="color-name">${item.label}</div>
+                        </div>
+                        <div class="color-values">
+                            <span class="color-copy" title="點擊複製 HEX" onclick="navigator.clipboard.writeText('${vals.hex}'); this.style.color='#10b981'; setTimeout(()=>this.style.color='', 500);">${vals.hex}</span>
+                            <span class="color-copy" title="點擊複製 RGB" onclick="navigator.clipboard.writeText('${vals.rgb.replace('RGB: ', '')}'); this.style.color='#10b981'; setTimeout(()=>this.style.color='', 500);">${vals.rgb}</span>
+                            <span class="color-copy" title="點擊複製 HSV" onclick="navigator.clipboard.writeText('${vals.hsv.replace('HSV: ', '')}'); this.style.color='#10b981'; setTimeout(()=>this.style.color='', 500);">${vals.hsv}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        let isPaletteDetailsOpen = false;
+        function togglePaletteDetails() {
+            isPaletteDetailsOpen = !isPaletteDetailsOpen;
+            const details = document.getElementById('paletteDetails');
+            const btn = document.getElementById('paletteToggleBtn');
+            if (isPaletteDetailsOpen) {
+                details.style.display = 'block';
+                btn.innerText = '隱藏色碼詳情 ▲';
+            } else {
+                details.style.display = 'none';
+                btn.innerText = '顯示色碼詳情 ▼';
+            }
+        }
+
+        function switchTab(tabName) {
+            ['color', 'border', 'header', 'content'].forEach(t => {
+                document.getElementById('btn-tab-' + t).classList.toggle('active', t === tabName);
+                document.getElementById('tab-' + t).classList.toggle('active', t === tabName);
+            });
+        }
+
+        // Init UI
+        function initUI() {
+            // Populate Palette Grid
+            const grid = document.getElementById('paletteGrid');
+            PALETTES.forEach(pal => {
+                const btn = document.createElement('button');
+                btn.className = 'palette-btn' + (pal.id === currentPaletteId ? ' active' : '');
+                btn.style.background = `linear-gradient(90deg, ${pal.p} 50%, ${pal.s} 50%)`;
+                btn.onclick = () => selectPalette(pal.id);
+                btn.title = pal.name;
+                grid.appendChild(btn);
+            });
+
+            rebuildGrids();
+
+            // Listeners
+            ['compPosterTitle', 'compContent', 'compMotivation', 'compPurpose', 'compResult'].forEach(id => {
+                document.getElementById(id).addEventListener('input', renderPreview);
+            });
+
+            renderPreview();
+            updatePaletteDetails(PALETTES.find(p => p.id === currentPaletteId));
+
+            // Setup Canvas Pan/Zoom Interaction
+            initPanZoom();
+            updateTransform();
+        }
+
+        function rebuildGrids() {
+            const pal = PALETTES.find(p => p.id === currentPaletteId);
+            const defs = getGlobalDefs(pal);
+
+            const bGrid = document.getElementById('borderGrid');
+            bGrid.innerHTML = '';
+            BORDERS.forEach((s, idx) => {
+                const sid = idx + 1;
+                const btn = document.createElement('button');
+                btn.className = 'style-btn' + (sid === currentBorderId ? ' active' : '');
+                btn.onclick = () => selectBorder(sid);
+                const thumbSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" width="100%" height="100%">${defs}${getComponentInnerSVG((sid - 1) % 8, -1, currentPaletteId, 240, 140, "", "")}</svg>`;
+                const label = document.createElement('div');
+                label.className = 'style-btn-label';
+                label.textContent = s.replace(/^[A-Z0-9]+:\s*/, '');
+                btn.innerHTML = thumbSVG;
+                btn.appendChild(label);
+                bGrid.appendChild(btn);
+            });
+
+            const hGrid = document.getElementById('headerGrid');
+            hGrid.innerHTML = '';
+            HEADERS.forEach((s, idx) => {
+                const sid = idx + 1;
+                const btn = document.createElement('button');
+                btn.className = 'style-btn' + (sid === currentHeaderId ? ' active' : '');
+                btn.onclick = () => selectHeader(sid);
+                const thumbSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" width="100%" height="100%">${defs}${getComponentInnerSVG((currentBorderId - 1) % 8, (sid - 1) % 10, currentPaletteId, 240, 140, "標題預覽", "")}</svg>`;
+                const label = document.createElement('div');
+                label.className = 'style-btn-label';
+                label.textContent = s.replace(/^[A-Z0-9]+:\s*/, '');
+                btn.innerHTML = thumbSVG;
+                btn.appendChild(label);
+                hGrid.appendChild(btn);
+            });
+        }
+
+        function selectBorder(id) {
+            currentBorderId = id;
+            document.querySelectorAll('#borderGrid .style-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === id);
+            });
+            renderPreview();
+        }
+
+        function selectHeader(id) {
+            currentHeaderId = id;
+            document.querySelectorAll('#headerGrid .style-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === id);
+            });
+            renderPreview();
+        }
+
+        function selectPalette(id) {
+            currentPaletteId = id;
+            document.querySelectorAll('.palette-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === id);
+            });
+            const pal = PALETTES.find(p => p.id === id);
+            document.getElementById('paletteLabel').innerText = pal.name;
+
+            updatePaletteDetails(pal);
+            rebuildGrids();
+            renderPreview();
+        }
+
+        function updateTransform() {
+            document.getElementById('zoomLevel').innerText = Math.round(currentZoom * 100) + '%';
+            document.getElementById('canvas').style.transform = `translate(${panX}px, ${panY}px) scale(${currentZoom})`;
+        }
+
+        function adjustZoom(delta) {
+            currentZoom = Math.max(0.1, Math.min(3.0, currentZoom + delta));
+            updateTransform();
+        }
+
+        function initPanZoom() {
+            const container = document.getElementById('previewArea');
+
+            container.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return; // Only left click
+                isPanning = true;
+                startClientX = e.clientX;
+                startClientY = e.clientY;
+                document.body.style.userSelect = 'none'; // Prevent text selection
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isPanning) return;
+                panX += (e.clientX - startClientX);
+                panY += (e.clientY - startClientY);
+                startClientX = e.clientX;
+                startClientY = e.clientY;
+                updateTransform();
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (isPanning) {
+                    isPanning = false;
+                    document.body.style.userSelect = '';
+                }
+            });
+
+            // Wheel logic: Zoom conditionally or pan like normal scrolling Document
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (e.ctrlKey || e.metaKey) {
+                    adjustZoom(e.deltaY < 0 ? 0.05 : -0.05);
+                } else {
+                    panY -= e.deltaY;
+                    panX -= e.deltaX;
+                    updateTransform();
+                }
+            }, { passive: false });
+        }
+
+        function escapeHtml(unsafe) {
+            return (unsafe || '').toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        function renderSafeText(x, y, width, fontSize, lineHeight, text, color, align) {
+            const linesRaw = text.split('\n');
+            const wrappedLines = [];
+            for (const line of linesRaw) {
+                if (!line.trim()) {
+                    wrappedLines.push('');
+                    continue;
+                }
+                let currentLine = '';
+                let currentWidth = 0;
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    // ascii characters overlap about half the font size
+                    const charW = (char.charCodeAt(0) > 255) ? fontSize : (fontSize * 0.55);
+                    if (currentWidth + charW > width && currentLine.length > 0) {
+                        wrappedLines.push(currentLine);
+                        currentLine = char;
+                        currentWidth = charW;
+                    } else {
+                        currentLine += char;
+                        currentWidth += charW;
+                    }
+                }
+                if (currentLine) {
+                    wrappedLines.push(currentLine);
+                }
+            }
+
+            let anchor = align === "left" ? "start" : "middle";
+            let res = `<text x="${x}" y="${y}" font-family="sans-serif" font-size="${fontSize}" fill="${color}" text-anchor="${anchor}">`;
+            wrappedLines.slice(0, 80).forEach((lineContent, i) => {
+                let safeLine = escapeHtml(lineContent);
+                let dy = i > 0 ? fontSize * lineHeight : 0;
+                res += `<tspan x="${x}" dy="${dy}">${safeLine}</tspan>`;
+            });
+            res += '</text>';
+            return res;
+        }
+
+        const DEFAULT_CONTENT = {
+            abstract: "本研究開發高精度辨識模組，傳統體系誤判高、效率低。我們於嵌入式平台實現微秒級決策。經 5 萬組樣本驗證，誤判率降至 2.4% 以下。",
+            motivation: "廢棄物管理為永續發展之關鍵，現今技術處理形變金屬與素材仍有瓶頸。將 AI 部署於端點，配合物理補償，能大幅提升效率。",
+            purpose: "1. 構建低功耗分辨模型。\n2. 研發動態感知爪。\n3. 量化運行穩定性。\n目標達成 60 FPS 以上處理效率。",
+            result: "抓取成功率 94.8%，處理通量提升 45%，數據顯示座標誤差精確收斂於 ±0.02 範圍。顯著性檢定 (p < 0.001)。"
+        };
+
+        function getGlobalDefs(pal) {
+            return `<defs>
+                <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="2" dy="5" stdDeviation="5" flood-opacity="0.12"/>
+                </filter>
+                <linearGradient id="gradHead" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="${pal.p}" />
+                    <stop offset="100%" stop-color="${pal.s}" stop-opacity="0.9" />
+                </linearGradient>
+            </defs>`;
+        }
+
+        function getComponentInnerSVG(bId, hId, paletteId, w, h, title, content) {
+            const pal = PALETTES.find(p => p.id === paletteId);
+            const s_title = title ? escapeHtml(title) : "";
+            const p_c = pal.p;
+            const card_bg = pal.card_bg;
+            const t_h = pal.t_h;
+            const t_b = pal.t_b;
+            const fff = "#ffffff";
+
+            let titleEstimate = 0;
+            for (let i = 0; i < s_title.length; i++) {
+                titleEstimate += s_title.charCodeAt(i) > 255 ? 1 : 0.6;
+            }
+
+            let inner = '';
+
+            // Border Layer
+            if (bId === 0) inner += `<rect width="${w}" height="${h}" fill="${card_bg}" stroke="${p_c}" stroke-width="1"/>`;
+            else if (bId === 1) inner += `<rect width="${w}" height="${h}" fill="${card_bg}"/>`;
+            else if (bId === 2) inner += `<rect width="${w}" height="${h}" fill="${card_bg}" rx="15" stroke="#eee" filter="url(#shadow)"/>`;
+            else if (bId === 3) inner += `<rect width="${w}" height="${h}" fill="${card_bg}" stroke="${p_c}" stroke-width="2"/><rect x="8" y="8" width="${w - 16}" height="${h - 16}" fill="none" stroke="${p_c}" stroke-width="1" opacity="0.6"/>`;
+            else if (bId === 4) inner += `<path d="M 20,0 H ${w} V ${h - 20} L ${w - 20},${h} H 0 V 20 Z" fill="${card_bg}" stroke="${p_c}" stroke-width="1.5"/>`;
+            else if (bId === 5) inner += `<rect width="${w}" height="${h}" fill="${card_bg}" stroke="${p_c}" stroke-dasharray="3,8"/>`;
+            else if (bId === 6) inner += `<path d="M 40,0 H ${w} V ${h - 40} A 40,40 0 0 1 ${w - 40},${h} H 0 V 40 A 40,40 0 0 1 40,0 Z" fill="${card_bg}" stroke="${p_c}" stroke-width="2"/>`;
+            else if (bId === 7) inner += `<rect width="${w}" height="${h}" fill="${card_bg}" opacity="0.4"/>`;
+
+            // Header Layer
+            if (hId < 0 || !s_title) { }
+            else if (hId === 0) inner += `<text x="20" y="40" font-size="24" fill="${t_h}" font-weight="bold">${s_title}</text>`;
+            else if (hId === 1) inner += `<rect width="${w}" height="40" fill="${p_c}"/><text x="20" y="28" font-size="24" fill="#fff" font-weight="bold">${s_title}</text>`;
+            else if (hId === 2) {
+                const tw = titleEstimate * 24; const pillW = Math.max(160, tw + 50);
+                inner += `<rect x="20" y="-20" width="${pillW}" height="40" rx="20" fill="${p_c}"/><text x="${20 + pillW / 2}" y="7" font-size="22" fill="#fff" text-anchor="middle" font-weight="bold">${s_title}</text>`;
+            }
+            else if (hId === 3) {
+                const tw = titleEstimate * 24; const ribbonW = Math.max(80, tw + 40);
+                inner += `<path d="M 0,0 H ${ribbonW} L ${ribbonW + 20},25 L ${ribbonW},50 H 0 Z" fill="${p_c}"/><text x="25" y="34" font-size="24" fill="#fff" font-weight="bold">${s_title}</text>`;
+            }
+            else if (hId === 4) inner += `<path d="M 0,0 V ${h}" stroke="${p_c}" stroke-width="12"/><text x="25" y="32" font-size="26" fill="${t_h}" font-weight="bold">${s_title}</text>`;
+            else if (hId === 5) {
+                const tOff = Math.min(180, titleEstimate * 12 + 10);
+                inner += `<text x="${w / 2}" y="45" font-size="24" fill="${t_h}" text-anchor="middle" font-weight="bold">${s_title}</text><line x1="30" y1="38" x2="${w / 2 - tOff}" y2="38" stroke="${p_c}" stroke-width="1.5"/><line x1="${w / 2 + tOff}" y1="38" x2="${w - 30}" y2="38" stroke="${p_c}" stroke-width="1.5"/>`;
+            }
+            else if (hId === 6) inner += `<path d="M 30,0 H 0 V ${h} H 30" fill="none" stroke="${p_c}" stroke-width="5"/><path d="M ${w - 30},0 H ${w} V ${h} H ${w - 30}" fill="none" stroke="${p_c}" stroke-width="5"/><text x="${w / 2}" y="40" font-size="24" fill="${t_h}" text-anchor="middle" font-weight="bold">${s_title}</text>`;
+            else if (hId === 7) {
+                const tw = Math.max(120, titleEstimate * 24 + 40);
+                inner += `<path d="M 0,35 V 10 A 10,10 0 0 1 10,0 H ${tw} L ${tw + 15},35 Z" fill="${p_c}"/><text x="25" y="25" font-size="22" fill="#fff" font-weight="bold">${s_title}</text>`;
+            }
+            else if (hId === 8) inner += `<path d="M 0,45 H ${w}" stroke="${p_c}" stroke-width="1"/><path d="M 0,50 H ${w / 3}" stroke="${p_c}" stroke-width="5"/><text x="0" y="35" font-size="30" fill="${t_h}" font-style="italic" font-weight="bold">${s_title}</text>`;
+            else if (hId === 9) inner += `<text x="20" y="45" font-size="26" fill="${t_h}" font-weight="bold"><tspan fill="${p_c}">◈</tspan> ${s_title}</text>`;
+
+            if (content) {
+                let textY = 75;
+                if (hId === 1 || hId === 3 || hId === 8) textY = 85;
+                if (hId === 2) textY = 50;
+                if (hId === 7) textY = 65;
+                if (bId === 1 && hId === 0) textY = 70;
+                inner += renderSafeText(24, textY, w - 48, 20, 1.6, content, t_b, "left");
+            }
+            return inner;
+        }
+
+        // Generate Thumbnails
+        function getSVGSource(bId, hId, paletteId, w, h, title, content, padding, isThumb = false) {
+            const pal = PALETTES.find(p => p.id === paletteId);
+            const viewBoxW = w + padding * 2;
+            const viewBoxH = h + padding * 2;
+            const svgWidth = isThumb ? "100%" : w;
+            const svgHeight = isThumb ? "100%" : h;
+
+            let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${viewBoxW} ${viewBoxH}" width="${svgWidth}" height="${svgHeight}">
+            <defs>
+                <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="2" dy="5" stdDeviation="5" flood-opacity="0.12"/>
+                </filter>
+                <linearGradient id="gradHead" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="${pal.p}" />
+                    <stop offset="100%" stop-color="${pal.s}" stop-opacity="0.9" />
+                </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="none" />
+            <g transform="translate(${padding}, ${padding})">`;
+
+            svg += getComponentInnerSVG(bId, hId, paletteId, w, h, title, content);
+            svg += `</g></svg>`;
+            return svg;
+        }
+
+        const TEMPLATE_SVG = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="650mm"
+   height="1200mm"
+   viewBox="0 0 650 1200"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="poster-template.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.060236882"
+     inkscape:cx="3378.3289"
+     inkscape:cy="-1153.7782"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer_content">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="650"
+       height="1200"
+       id="board_left_frame"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="660"
+       y="0"
+       width="750"
+       height="1200"
+       id="board_middle_frame"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="1420"
+       y="0"
+       width="650"
+       height="1200"
+       id="board_right_frame"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="660"
+       y="-200"
+       width="750"
+       height="200"
+       id="board_top_frame"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(279.52941,427.05882)" />
+  <g inkscape:groupmode="layer" inkscape:label="Content Layer" id="layer_content">__CONTENT_HERE__</g>
+</svg>`;
+
+        function generateSVGString(isForDownload = false) {
+            const pal = PALETTES.find(p => p.id === currentPaletteId);
+            const bId = (currentBorderId - 1) % 8;
+            const hId = (currentHeaderId - 1) % 10;
+
+            const contObj = {
+                abstract: document.getElementById('compContent').value,
+                motivation: document.getElementById('compMotivation').value,
+                purpose: document.getElementById('compPurpose').value,
+                result: document.getElementById('compResult').value
+            };
+
+            const board_bg = pal.board_bg;
+            const t_h = pal.t_h;
+
+            let c = `<defs>
+                <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="2" dy="5" stdDeviation="5" flood-opacity="0.12"/>
+                </filter>
+                <linearGradient id="gradHead" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="${pal.p}" />
+                    <stop offset="100%" stop-color="${pal.s}" stop-opacity="0.9" />
+                </linearGradient>
+            </defs>`;
+
+            // TOP PANEL (Title block)
+            const posterTitle = document.getElementById('compPosterTitle').value.trim() || '未命名研究';
+            let titleSVG = '';
+            if (posterTitle.length > 12) {
+                const l1 = posterTitle.substring(0, 12);
+                const l2 = posterTitle.substring(12);
+                titleSVG = `<text x="375" y="115" font-family="serif" font-size="60" fill="${t_h}" font-weight="bold" text-anchor="middle">${escapeHtml(l1)}</text>
+                <text x="375" y="175" font-family="serif" font-size="60" fill="${t_h}" font-weight="bold" text-anchor="middle">${escapeHtml(l2)}</text>`;
+            } else {
+                titleSVG = `<text x="375" y="145" font-family="serif" font-size="60" fill="${t_h}" font-weight="bold" text-anchor="middle">${escapeHtml(posterTitle)}</text>`;
+            }
+
+            // Generate Top Panel Background matching the global component border style
+            let topBgSVG = '';
+            const tw = 750, th = 200;
+            const p_c = pal.p;
+            const card_bg = pal.board_bg; // Top panel matches column board colors
+            if (bId === 0) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}" stroke="${p_c}" stroke-width="1"/>`;
+            else if (bId === 1) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}"/>`;
+            else if (bId === 2) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}" rx="15" stroke="#eee" filter="url(#shadow)"/>`;
+            else if (bId === 3) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}" stroke="${p_c}" stroke-width="2"/><rect x="8" y="8" width="${tw - 16}" height="${th - 16}" fill="none" stroke="${p_c}" stroke-width="1" opacity="0.6"/>`;
+            else if (bId === 4) topBgSVG = `<path d="M 20,0 H ${tw} V ${th - 20} L ${tw - 20},${th} H 0 V 20 Z" fill="${card_bg}" stroke="${p_c}" stroke-width="1.5"/>`;
+            else if (bId === 5) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}" stroke="${p_c}" stroke-dasharray="3,8"/>`;
+            else if (bId === 6) topBgSVG = `<path d="M 40,0 H ${tw} V ${th - 40} A 40,40 0 0 1 ${tw - 40},${th} H 0 V 40 A 40,40 0 0 1 40,0 Z" fill="${card_bg}" stroke="${p_c}" stroke-width="2"/>`;
+            else if (bId === 7) topBgSVG = `<rect width="${tw}" height="${th}" fill="${card_bg}" opacity="0.4"/>`;
+
+            // Moved to translations based on user's Inkscape template (x: 660, y: -200)
+            c += `<g transform="translate(660, -200)" id="panel_top">
+                ${topBgSVG}
+                <text x="25" y="60" font-family="sans-serif" font-size="20" fill="${t_h}" font-weight="bold">${escapeHtml("全球科展聯合會 | 應用科學科")}</text>
+                <text x="725" y="60" font-family="sans-serif" font-size="22" fill="${t_h}" text-anchor="end" font-weight="bold">${escapeHtml("編號：080215-M001")}</text>
+                ${titleSVG}
+            </g>`;
+
+            // LEFT PANEL
+            c += `<g transform="translate(0, 0)">
+                <rect width="650" height="1200" fill="${board_bg}"/>
+                <g transform="translate(40, 40)">`;
+            c += `<g transform="translate(0, 0)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 220, "摘要", contObj.abstract) + `</g>`;
+            c += `<g transform="translate(0, 260)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 400, "研究動機", contObj.motivation) + `</g>`;
+            c += `<g transform="translate(0, 700)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 420, "研究目的與展望", contObj.purpose) + `</g>`;
+            c += `</g></g>`;
+
+            // MIDDLE PANEL
+            c += `<g transform="translate(660, 0)">
+                <rect width="750" height="1200" fill="${board_bg}"/>
+                <g transform="translate(40, 40)">`;
+            c += `<g transform="translate(0, 0)">` + getComponentInnerSVG(bId, hId, pal.id, 670, 600, "研究方法與系統流程", "此區為研究方法。在實務上我們結合感測器與AI辨識晶片，實現智慧城市邊緣運算。\n\n" + contObj.purpose) + `</g>`;
+            c += `<g transform="translate(0, 650)">` + getComponentInnerSVG(bId, hId, pal.id, 670, 480, "數據結果與量化分析", "實驗分析指出：\n\n" + contObj.result) + `</g>`;
+            c += `</g></g>`;
+
+            // RIGHT PANEL
+            c += `<g transform="translate(1420, 0)">
+                <rect width="650" height="1200" fill="${board_bg}"/>
+                <g transform="translate(40, 40)">`;
+            c += `<g transform="translate(0, 0)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 500, "綜合討論與分析", "討論與分析：\n\n" + contObj.result) + `</g>`;
+            c += `<g transform="translate(0, 540)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 340, "研究結論", "1. 本研究成功優化了偵測效率並顯著降低運算能耗。\n2. 提出一套適應複雜環境的光源設計。") + `</g>`;
+            c += `<g transform="translate(0, 920)">` + getComponentInnerSVG(bId, hId, pal.id, 570, 180, "參考文獻", "[1] Machine Vision Tech, 2025\n[2] IoT Applications in Modern Smart Cities, 2024\n") + `</g>`;
+            c += `</g></g>`;
+
+            let templateData = TEMPLATE_SVG;
+            if (!isForDownload) {
+                // Ensure browser previews scale to their container instead of exploding
+                // Expand viewBox to view all 4 out-of-bounds Inkscape pages in the browser
+                templateData = templateData.replace('width="650mm"', 'width="100%"')
+                    .replace('height="1200mm"', 'height="100%"')
+                    .replace('viewBox="0 0 650 1200"', 'viewBox="0 -210 2070 1410"');
+            }
+
+            return templateData.replace('__CONTENT_HERE__', c);
+        }
+
+        function renderPreview() {
+            // Set background color of preview area to neutral so the poster bounds stand out
+            document.getElementById('previewArea').style.backgroundColor = '#9ca3af';
+
+            // Generate SVG and inject
+            const svgStr = generateSVGString(false);
+            document.getElementById('canvas').innerHTML = svgStr;
+        }
+
+        function downloadSVG() {
+            const svgStr = generateSVGString(true);
+            const blob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `poster_b${currentBorderId}_h${currentHeaderId}_pal${currentPaletteId}.svg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Run Init
+        window.addEventListener('DOMContentLoaded', initUI);
+    </script>
+</body>
+
+</html>
